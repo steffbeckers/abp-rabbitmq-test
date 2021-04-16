@@ -27,6 +27,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.EventBus.RabbitMq;
 
 namespace Test
 {
@@ -42,6 +43,7 @@ namespace Test
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule)
     )]
+    [DependsOn(typeof(AbpEventBusRabbitMqModule))]
     public class TestHttpApiHostModule : AbpModule
     {
         private const string DefaultCorsPolicyName = "Default";
