@@ -25,6 +25,7 @@ namespace Test.EntityFrameworkCore
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside TestDbContextModelCreatingExtensions.ConfigureTest
          */
+        public DbSet<Sample.Sample> Samples { get; set; }
 
         public TestDbContext(DbContextOptions<TestDbContext> options)
             : base(options)

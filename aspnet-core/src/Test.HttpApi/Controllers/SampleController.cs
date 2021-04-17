@@ -21,5 +21,13 @@ namespace Test.Controllers
             await _sampleAppService.SendTestEvent();
             return Ok();
         }
+
+        [HttpGet]
+        [Route("create-test-sample")]
+        public async Task<IActionResult> CreateTestSample()
+        {
+            await _sampleAppService.CreateTestSample();
+            return Ok();
+        }
     }
 }

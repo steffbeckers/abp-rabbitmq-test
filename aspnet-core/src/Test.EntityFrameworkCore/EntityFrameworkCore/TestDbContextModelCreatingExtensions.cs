@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Test.EntityFrameworkCore
 {
@@ -14,9 +15,15 @@ namespace Test.EntityFrameworkCore
             //builder.Entity<YourEntity>(b =>
             //{
             //    b.ToTable(TestConsts.DbTablePrefix + "YourEntities", TestConsts.DbSchema);
-            //    b.ConfigureByConvention(); //auto configure for the base class props
+            //    b.ConfigureByConvention(); // auto configure for the base class props
             //    //...
             //});
+
+            builder.Entity<Sample.Sample>(b =>
+            {
+                b.ToTable(TestConsts.DbTablePrefix + "Samples", TestConsts.DbSchema);
+                b.ConfigureByConvention(); // auto configure for the base class props
+            });
         }
     }
 }

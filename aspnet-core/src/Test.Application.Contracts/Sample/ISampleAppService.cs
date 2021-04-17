@@ -6,5 +6,6 @@ namespace Test.Sample
     public interface ISampleAppService : IApplicationService
     {
         Task SendTestEvent();
+        Task CreateTestSample();
     }
 }
