@@ -33,10 +33,14 @@ namespace Test.Sample
 
         public async Task CreateTestSample()
         {
-            await _sampleRepository.InsertAsync(new Sample()
+            Sample sample = new Sample()
             {
                 Message = $"Sample added on {DateTime.Now}"
-            });
+            };
+
+            sample.Test();
+
+            await _sampleRepository.InsertAsync(sample);
         }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Test.MultiTenancy;
+using Test.Sample;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.BackgroundJobs;
+using Volo.Abp.Domain.Entities.Events.Distributed;
 using Volo.Abp.Emailing;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -36,6 +38,12 @@ namespace Test
             Configure<AbpMultiTenancyOptions>(options =>
             {
                 options.IsEnabled = MultiTenancyConsts.IsEnabled;
+            });
+
+            Configure<AbpDistributedEntityEventOptions>(options =>
+            {
+                options.AutoEventSelectors.Add<Sample.Sample>();
+                options.EtoMappings.Add<Sample.Sample, SampleEto>();
             });
 
 #if DEBUG
