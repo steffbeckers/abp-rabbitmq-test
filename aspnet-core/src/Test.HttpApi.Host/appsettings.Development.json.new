@@ -1,0 +1,19 @@
+{
+  "ConnectionStrings": {
+    "Default": "Server=localhost;Database=ABPRabbitMQTest;Trusted_Connection=True"
+  },
+  "RabbitMQ": {
+    "Connections": {
+      "Default": {
+        "HostName": "rabbitmq.steffbeckers.eu",
+        "Port": "5672",
+        "UserName": "abp",
+        "Password": "INSERTPASSWORDHERE"
+      }
+    },
+    "EventBus": {
+      "ClientName": "ABPRabbitMQTest.API",
+      "ExchangeName": "ABPRabbitMQTest"
+    }
+  }
+}
